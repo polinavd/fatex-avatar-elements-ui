@@ -28,55 +28,6 @@
   --fatex-avatar-shadow: rgba(0, 0, 0, 0.34);
 }
 
-:root.fatex-avatar-elements-ui body.game {
-  background:
-    linear-gradient(rgba(8, 12, 16, 0.12), rgba(8, 12, 16, 0.18)),
-    var(--fatex-avatar-game-background) center center / cover no-repeat fixed !important;
-}
-
-:root.fatex-avatar-elements-ui .fatex-avatar-world-background {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    linear-gradient(rgba(8, 12, 16, 0.08), rgba(8, 12, 16, 0.18)),
-    var(--fatex-avatar-game-background) center center / cover no-repeat;
-}
-
-:root.fatex-avatar-elements-ui #board,
-:root.fatex-avatar-elements-ui #canvas {
-  opacity: 0;
-}
-
-:root.fatex-avatar-elements-ui #interface,
-:root.fatex-avatar-elements-ui #ui-left,
-:root.fatex-avatar-elements-ui #ui-middle,
-:root.fatex-avatar-elements-ui #ui-right,
-:root.fatex-avatar-elements-ui #ui-bottom,
-:root.fatex-avatar-elements-ui #sidebar,
-:root.fatex-avatar-elements-ui .app {
-  position: relative;
-  z-index: 2;
-}
-
-:root.fatex-avatar-elements-ui #board,
-:root.fatex-avatar-elements-ui #canvas,
-:root.fatex-avatar-elements-ui #scene {
-  background:
-    linear-gradient(rgba(8, 12, 16, 0.08), rgba(8, 12, 16, 0.14)),
-    var(--fatex-avatar-game-background) center center / cover no-repeat fixed !important;
-}
-
-:root.fatex-avatar-elements-ui #board,
-:root.fatex-avatar-elements-ui #interface,
-:root.fatex-avatar-elements-ui #ui-left,
-:root.fatex-avatar-elements-ui #ui-middle,
-:root.fatex-avatar-elements-ui #ui-right,
-:root.fatex-avatar-elements-ui #ui-bottom {
-  background-color: transparent;
-}
-
 :root.fatex-avatar-elements-ui .fatex-sheet .window-content,
 :root.fatex-avatar-elements-ui .fatex-sheet--app .window-content,
 :root.fatex-avatar-elements-ui .fatex-sheet--item .window-content {

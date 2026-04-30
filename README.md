@@ -19,6 +19,7 @@ https://raw.githubusercontent.com/polinavd/fatex-avatar-elements-ui/master/modul
 - The FateX system remains unchanged.
 - The module only loads CSS and a small ES module with client-side display settings.
 - The style uses user-supplied elemental PNG icons and a cleaner white panel layout.
+- On first GM load, the module creates a `Four Elements Landing` scene using the bundled background image.
 
 ## Client settings
 
