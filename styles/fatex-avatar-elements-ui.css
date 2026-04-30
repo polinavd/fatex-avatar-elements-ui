@@ -272,12 +272,13 @@
   isolation: isolate;
 }
 
+.fatex-chat::before,
 :root.fatex-avatar-elements-ui .fatex-chat::before {
   content: "";
   position: absolute;
   inset: 8px;
-  z-index: -1;
-  opacity: 0.13;
+  z-index: 0;
+  opacity: 0.16;
   background:
     var(--fatex-avatar-water-icon) 4% 12% / 76px 76px no-repeat,
     var(--fatex-avatar-air-icon) 96% 12% / 72px 72px no-repeat,
@@ -287,6 +288,7 @@
   pointer-events: none;
 }
 
+.fatex-chat > *,
 :root.fatex-avatar-elements-ui .fatex-chat .fatex-headline,
 :root.fatex-avatar-elements-ui .fatex-chat .fatex-roll,
 :root.fatex-avatar-elements-ui .fatex-chat .fatex-dice,
