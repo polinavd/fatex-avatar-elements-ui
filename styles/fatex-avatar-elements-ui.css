@@ -49,33 +49,44 @@
 :root.fatex-avatar-elements-ui .fatex-header {
   isolation: isolate;
   overflow: hidden;
-  background:
-    linear-gradient(90deg, rgba(85, 112, 65, 0.94), rgba(35, 111, 143, 0.96) 38%, rgba(185, 74, 40, 0.94));
-  box-shadow: 0 8px 22px var(--fatex-avatar-shadow);
+  background: #14202a;
+  box-shadow: 0 8px 20px rgba(20, 32, 42, 0.24);
 }
 
 :root.fatex-avatar-elements-ui .fatex-header::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: auto 0 0 0;
+  height: 4px;
   z-index: -1;
-  opacity: 0.34;
-  background: none;
+  opacity: 1;
+  background: linear-gradient(90deg, var(--fatex-avatar-earth), var(--fatex-avatar-water) 42%, var(--fatex-avatar-air) 66%, var(--fatex-avatar-fire));
 }
 
 :root.fatex-avatar-elements-ui .fatex-header::after {
   content: "";
   position: absolute;
-  inset: 6px 120px 6px auto;
-  width: 240px;
+  top: 12px;
+  left: 52%;
+  width: 184px;
+  height: 42px;
   z-index: -1;
-  opacity: 0.22;
+  opacity: 0.5;
   background:
-    var(--fatex-avatar-air-icon) left center / 54px 54px no-repeat,
-    var(--fatex-avatar-water-icon) 62px center / 54px 54px no-repeat,
-    var(--fatex-avatar-earth-icon) 124px center / 54px 54px no-repeat,
-    var(--fatex-avatar-fire-icon) 186px center / 54px 54px no-repeat;
-  filter: saturate(1.18) contrast(1.08);
+    var(--fatex-avatar-air-icon) 0 center / 38px 38px no-repeat,
+    var(--fatex-avatar-water-icon) 48px center / 38px 38px no-repeat,
+    var(--fatex-avatar-earth-icon) 96px center / 38px 38px no-repeat,
+    var(--fatex-avatar-fire-icon) 144px center / 38px 38px no-repeat;
+  filter: saturate(1.25) contrast(1.12) drop-shadow(0 1px 2px rgba(255, 255, 255, 0.28));
+  transform: translateX(-50%);
+}
+
+:root.fatex-avatar-elements-ui .fatex-header__combine,
+:root.fatex-avatar-elements-ui .fatex-header__name,
+:root.fatex-avatar-elements-ui .fatex-header__fate-points,
+:root.fatex-avatar-elements-ui .fatex-header__logo {
+  position: relative;
+  z-index: 1;
 }
 
 :root.fatex-avatar-elements-ui .fatex-header__image img,
