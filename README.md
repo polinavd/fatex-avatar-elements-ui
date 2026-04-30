@@ -11,15 +11,11 @@ Foundry VTT 13 module that applies an elemental martial-fantasy visual skin to t
 ## Install by Manifest URL
 
 1. Create a GitHub repository named `fatex-avatar-elements-ui`.
-2. Create a release on GitHub.
-3. Upload both files to the release:
-   - `module.json`
-   - `fatex-avatar-elements-ui.zip`
-4. In Foundry, open `Setup -> Add-on Modules -> Install Module`.
-5. Paste this manifest URL:
+2. In Foundry, open `Setup -> Add-on Modules -> Install Module`.
+3. Paste this manifest URL:
 
 ```text
-https://github.com/polinavd/fatex-avatar-elements-ui/releases/latest/download/module.json
+https://raw.githubusercontent.com/polinavd/fatex-avatar-elements-ui/master/module.json
 ```
 
 ## Notes
