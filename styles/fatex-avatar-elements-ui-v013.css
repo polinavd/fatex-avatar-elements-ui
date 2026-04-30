@@ -1,0 +1,57 @@
+@import url("./fatex-avatar-elements-ui.css");
+
+:root.fatex-avatar-elements-ui .fatex-header {
+  background: #0f1821 !important;
+  box-shadow: 0 8px 18px rgba(15, 24, 33, 0.32) !important;
+}
+
+:root.fatex-avatar-elements-ui .fatex-header::after {
+  content: none !important;
+}
+
+:root.fatex-avatar-elements-ui .fatex-avatar-header-elements {
+  position: absolute;
+  top: 10px;
+  right: 170px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
+  pointer-events: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-avatar-header-elements img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border: 0;
+  box-shadow: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-header__combine,
+:root.fatex-avatar-elements-ui .fatex-header__name,
+:root.fatex-avatar-elements-ui .fatex-header__fate-points,
+:root.fatex-avatar-elements-ui .fatex-template-action,
+:root.fatex-avatar-elements-ui .fatex-header__logo {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  :root.fatex-avatar-elements-ui .fatex-avatar-header-elements {
+    right: 130px;
+    gap: 4px;
+    padding-inline: 6px;
+  }
+
+  :root.fatex-avatar-elements-ui .fatex-avatar-header-elements img {
+    width: 26px;
+    height: 26px;
+  }
+}
