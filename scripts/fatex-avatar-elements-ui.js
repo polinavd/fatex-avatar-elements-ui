@@ -66,6 +66,10 @@ Hooks.once("ready", () => {
     return;
   }
 
+  window.setTimeout(() => createStarterScene(), 1000);
+});
+
+Hooks.once("canvasReady", () => {
   createStarterScene();
 });
 
@@ -73,15 +77,16 @@ async function createStarterScene() {
   if (!game.user?.isGM) return;
   if (!game.settings.get(MODULE_ID, "createStarterScene")) return;
 
-  const existingScene = game.scenes?.find((scene) => {
+  const existingScene = Array.from(game.scenes ?? []).find((scene) => {
     return scene.getFlag(MODULE_ID, STARTER_SCENE_FLAG) || scene.name === STARTER_SCENE_NAME;
   });
   if (existingScene) return;
 
   try {
-    const scene = await Scene.create({
+    const SceneDocument = CONFIG.Scene?.documentClass ?? foundry.documents.Scene ?? Scene;
+    const scene = await SceneDocument.create({
       name: STARTER_SCENE_NAME,
-      active: true,
+      active: false,
       navigation: true,
       navName: "Four Elements",
       width: 1200,
@@ -101,7 +106,9 @@ async function createStarterScene() {
         }
       }
     });
-    await scene?.activate();
+
+    await scene?.activate?.();
+    ui.notifications?.info("FateX: Four Elements starter scene created.");
   } catch (error) {
     console.error(`${MODULE_ID} | Failed to create starter scene`, error);
     ui.notifications?.error("FateX: Four Elements UI could not create the starter scene. See console for details.");
