@@ -14,6 +14,7 @@
   --fatex-avatar-air-icon: url("../assets/elements/air.png");
   --fatex-avatar-water-icon: url("../assets/elements/water.png");
   --fatex-avatar-earth-icon: url("../assets/elements/earth.png");
+  --fatex-avatar-game-background: url("../assets/backgrounds/four-elements-battle.jpg");
   --fatex-header-color: var(--fatex-avatar-ink);
   --fatex-header-text-color: #fff8e8;
   --fatex-primary-color: var(--fatex-avatar-ink);
@@ -25,6 +26,29 @@
   --fatex-avatar-ink-soft: #1f2a35;
   --fatex-avatar-line: rgba(12, 17, 22, 0.42);
   --fatex-avatar-shadow: rgba(0, 0, 0, 0.34);
+}
+
+:root.fatex-avatar-elements-ui body.game {
+  background:
+    linear-gradient(rgba(8, 12, 16, 0.12), rgba(8, 12, 16, 0.18)),
+    var(--fatex-avatar-game-background) center center / cover no-repeat fixed !important;
+}
+
+:root.fatex-avatar-elements-ui #board,
+:root.fatex-avatar-elements-ui #canvas,
+:root.fatex-avatar-elements-ui #scene {
+  background:
+    linear-gradient(rgba(8, 12, 16, 0.08), rgba(8, 12, 16, 0.14)),
+    var(--fatex-avatar-game-background) center center / cover no-repeat fixed !important;
+}
+
+:root.fatex-avatar-elements-ui #board,
+:root.fatex-avatar-elements-ui #interface,
+:root.fatex-avatar-elements-ui #ui-left,
+:root.fatex-avatar-elements-ui #ui-middle,
+:root.fatex-avatar-elements-ui #ui-right,
+:root.fatex-avatar-elements-ui #ui-bottom {
+  background-color: transparent;
 }
 
 :root.fatex-avatar-elements-ui .fatex-sheet .window-content,

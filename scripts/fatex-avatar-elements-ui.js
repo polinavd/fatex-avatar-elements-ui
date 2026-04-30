@@ -21,22 +21,6 @@ function applyThemeClasses() {
 function markThemedWindow(html) {
   const element = html?.jquery ? html[0] : html;
   element?.closest?.(".app")?.classList?.add("fatex-avatar-themed-window");
-  element?.querySelectorAll?.(".fatex-header")?.forEach(addHeaderElements);
-}
-
-function addHeaderElements(header) {
-  if (header.querySelector(".fatex-avatar-header-elements")) return;
-
-  const elementBar = document.createElement("div");
-  elementBar.className = "fatex-avatar-header-elements";
-  elementBar.innerHTML = `
-    <img src="modules/${MODULE_ID}/assets/elements/air.png" alt="">
-    <img src="modules/${MODULE_ID}/assets/elements/water.png" alt="">
-    <img src="modules/${MODULE_ID}/assets/elements/earth.png" alt="">
-    <img src="modules/${MODULE_ID}/assets/elements/fire.png" alt="">
-  `;
-
-  header.appendChild(elementBar);
 }
 
 Hooks.once("init", () => {
@@ -74,9 +58,5 @@ Hooks.on("renderActorSheet", (_app, html) => {
 });
 
 Hooks.on("renderItemSheet", (_app, html) => {
-  markThemedWindow(html);
-});
-
-Hooks.on("renderApplication", (_app, html) => {
   markThemedWindow(html);
 });
