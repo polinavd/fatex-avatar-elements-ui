@@ -1,0 +1,342 @@
+<!doctype html>
+<html class="fatex-avatar-elements-ui" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FateX Four Elements UI Preview</title>
+    <link rel="stylesheet" href="styles/fatex-avatar-elements-ui.css?v=5">
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Montserrat, Arial, sans-serif;
+        color: #17212b;
+        background:
+          radial-gradient(circle at 20% 15%, rgba(185, 74, 40, 0.22), transparent 28%),
+          radial-gradient(circle at 78% 20%, rgba(35, 111, 143, 0.26), transparent 26%),
+          linear-gradient(135deg, #263238, #14191f);
+      }
+
+      .preview-stage {
+        display: grid;
+        grid-template-columns: minmax(720px, 920px) 320px;
+        gap: 24px;
+        align-items: start;
+        padding: 32px;
+      }
+
+      .app.fatex-sheet {
+        height: 760px;
+        overflow: hidden;
+        border-radius: 6px;
+        background: #fff;
+      }
+
+      .window-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+
+      .window-content {
+        height: calc(100% - 33px);
+      }
+
+      .fatex-desk {
+        display: grid;
+        grid-template-rows: min-content 1fr min-content;
+        height: 100%;
+      }
+
+      .fatex-header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        font-size: 23px;
+        color: var(--fatex-header-text-color);
+        background: var(--fatex-header-color);
+      }
+
+      .fatex-header__combine {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .fatex-header__image img {
+        width: 44px;
+        height: 44px;
+        object-fit: cover;
+        background: transparent;
+      }
+
+      .fatex-header__name,
+      .fatex-header__fate-points {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .fatex-header__title {
+        height: 25px;
+        font-size: 23px;
+      }
+
+      .fatex-header__label,
+      .fatex-text-input__label {
+        font-size: 8px;
+        text-transform: uppercase;
+      }
+
+      .fatex-desk__content--actor-sheet {
+        display: grid;
+        grid-template-columns: 1fr 240px;
+        overflow: hidden;
+      }
+
+      .fatex-desk__tabloid {
+        display: grid;
+        grid-template-columns: 55% 1fr;
+        grid-template-rows: min-content min-content 1fr min-content;
+        overflow: hidden;
+      }
+
+      .fatex-desk__messages,
+      .fatex-desk__tabs,
+      .fatex-desk__footer {
+        grid-column: 1 / -1;
+      }
+
+      .fatex-desk__aspects,
+      .fatex-desk__consequences,
+      .fatex-desk__tabs,
+      .fatex-artwork,
+      .fatex-item-grid,
+      .fatex-desk__footer {
+        padding: 10px;
+        background-image: none;
+      }
+
+      .fatex-headline {
+        position: relative;
+        margin-bottom: 8px;
+      }
+
+      .fatex-headline__text {
+        margin: 0;
+        padding: 5px 20px;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+
+      .fatex-text-input {
+        min-height: 24px;
+        padding: 4px 6px;
+        margin-bottom: 10px;
+      }
+
+      .fatex-tabs-navigation {
+        display: flex;
+        justify-content: space-around;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .fatex-tabs-navigation__item {
+        padding: 7px 18px;
+      }
+
+      .fatex-item-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .fatex-stress-track {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .stress-box {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        color: #fff8e8;
+        font-weight: 800;
+        background: #17212b;
+        border-radius: 4px;
+      }
+
+      .fatex-artwork__image {
+        display: block;
+        width: 100%;
+        background: transparent;
+      }
+
+      .token-preview {
+        display: grid;
+        place-items: center;
+        aspect-ratio: 1;
+        width: 100%;
+        color: rgba(23, 33, 43, 0.46);
+        background: #fff;
+        border: 1px solid rgba(23, 33, 43, 0.14);
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .chat-panel {
+        display: grid;
+        gap: 16px;
+      }
+
+      .chat-message {
+        padding: 14px !important;
+      }
+
+      .message-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .fatex-chat {
+        font-size: 22px;
+      }
+
+      .fatex-dice {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin: 16px auto;
+      }
+
+      .fatex-dice div {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        font-weight: 800;
+      }
+
+      .fatex-roll-actions {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .fatex-roll-actions button {
+        width: 32px;
+        height: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="preview-stage">
+      <section class="app fatex-sheet fatex-avatar-themed-window">
+        <div class="window-header">
+          <strong>FateX: Four Elements UI</strong>
+          <span>Actor Sheet Preview</span>
+        </div>
+        <div class="window-content">
+          <form class="fatex-desk">
+            <header class="fatex-header">
+              <div class="fatex-header__combine">
+                <div class="fatex-header__image"><img alt=""></div>
+                <div class="fatex-header__name">
+                  <div class="fatex-header__label">Character</div>
+                  <div class="fatex-header__title">Kai of the Western Gate</div>
+                </div>
+              </div>
+              <div class="fatex-header__fate-points">
+                <div class="fatex-header__label fatex-header__label--center">Fate Points</div>
+                <div class="fatex-header__title">3 / 4</div>
+              </div>
+            </header>
+
+            <div class="fatex-desk__content fatex-desk__content--actor-sheet">
+              <div class="fatex-desk__tabloid">
+                <section class="fatex-desk__aspects">
+                  <header class="fatex-headline"><h2 class="fatex-headline__text">Aspects</h2></header>
+                  <div class="fatex-item"><div class="fatex-text-input">Last student of a lost style</div><label class="fatex-text-input__label">High Concept</label></div>
+                  <div class="fatex-item"><div class="fatex-text-input">Never backs down from a duel</div><label class="fatex-text-input__label">Trouble</label></div>
+                  <div class="fatex-item"><div class="fatex-text-input">The wind knows my name</div><label class="fatex-text-input__label">Aspect</label></div>
+                </section>
+
+                <section class="fatex-desk__consequences">
+                  <header class="fatex-headline"><h2 class="fatex-headline__text">Consequences</h2></header>
+                  <div class="fatex-item"><div class="fatex-text-input">Singed sleeve</div><label class="fatex-text-input__label">Mild</label></div>
+                  <div class="fatex-item"><div class="fatex-text-input">Shaken focus</div><label class="fatex-text-input__label">Moderate</label></div>
+                </section>
+
+                <section class="fatex-desk__tabs">
+                  <nav class="fatex-tabs-navigation">
+                    <a class="fatex-tabs-navigation__item active">Skills</a>
+                    <a class="fatex-tabs-navigation__item">Extras</a>
+                    <a class="fatex-tabs-navigation__item">Bio</a>
+                  </nav>
+                  <div class="fatex-item-grid">
+                    <header class="fatex-headline"><h2 class="fatex-headline__text">Techniques</h2></header>
+                    <div class="fatex-text-input">Athletics +4</div>
+                    <div class="fatex-text-input">Lore +3</div>
+                    <div class="fatex-text-input">Fight +3</div>
+                    <div class="fatex-text-input">Empathy +2</div>
+                  </div>
+                </section>
+
+                <footer class="fatex-desk__footer">
+                  <button class="fatex-button fatex-button--dark" type="button">Configuration</button>
+                  <button class="fatex-button fatex-button--light" type="button">Edit Mode</button>
+                </footer>
+              </div>
+
+              <aside class="fatex-desk__sidebar">
+                <div class="fatex-artwork">
+                  <div class="token-preview">Actor token</div>
+                </div>
+                <section class="fatex-item-grid">
+                  <header class="fatex-headline"><h2 class="fatex-headline__text">Stress</h2></header>
+                  <div class="fatex-stress-track">
+                    <span class="stress-box">1</span>
+                    <span class="stress-box">2</span>
+                    <span class="stress-box">3</span>
+                    <span class="stress-box">4</span>
+                  </div>
+                </section>
+              </aside>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <aside class="chat-panel">
+        <article class="chat-message">
+          <header class="message-header"><span>Kai</span><span>Attack Roll</span></header>
+          <div class="fatex-chat">
+            <header class="fatex-headline fatex-headline--chat"><h2 class="fatex-headline__text">Fire Sweep</h2></header>
+            <div class="fatex-roll">
+              <div class="fatex-dice fatex-dice--2d6-roll">
+                <div>+</div><div>0</div><div>-</div><div>+</div>
+              </div>
+              <div class="fatex-roll__total">+5</div>
+              <div class="fatex-roll__ladder">Superb</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="chat-message">
+          <header class="message-header"><span>Module settings</span><span>Client</span></header>
+          <p>Compact sheets and stronger ink contrast are available as client-side settings.</p>
+        </article>
+      </aside>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "id": "fatex-avatar-elements-ui",
+  "title": "FateX: Four Elements UI",
+  "description": "A Foundry VTT 13 visual theme module for FateX, inspired by elemental martial-fantasy ink, parchment, and four-element color language.",
+  "version": "0.1.0",
+  "url": "https://github.com/polinavd/fatex-avatar-elements-ui",
+  "manifest": "https://github.com/polinavd/fatex-avatar-elements-ui/releases/latest/download/module.json",
+  "download": "https://github.com/polinavd/fatex-avatar-elements-ui/releases/latest/download/fatex-avatar-elements-ui.zip",
+  "authors": [
+    {
+      "name": "Codex"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "fatex",
+        "type": "system",
+        "compatibility": {
+          "minimum": "1.5.4",
+          "verified": "1.5.4"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/fatex-avatar-elements-ui.js"
+  ],
+  "styles": [
+    "styles/fatex-avatar-elements-ui.css"
+  ]
+}

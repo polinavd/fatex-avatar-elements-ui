@@ -1,0 +1,288 @@
+:root.fatex-avatar-elements-ui {
+  --fatex-avatar-ink: #17212b;
+  --fatex-avatar-ink-soft: #38414b;
+  --fatex-avatar-paper: #ffffff;
+  --fatex-avatar-paper-warm: #f5f7fb;
+  --fatex-avatar-line: rgba(35, 29, 21, 0.24);
+  --fatex-avatar-shadow: rgba(30, 21, 12, 0.24);
+  --fatex-avatar-fire: #b94a28;
+  --fatex-avatar-air: #d8a946;
+  --fatex-avatar-water: #236f8f;
+  --fatex-avatar-earth: #557041;
+  --fatex-avatar-spirit: #7e4f83;
+  --fatex-avatar-fire-icon: url("../assets/elements/fire.png");
+  --fatex-avatar-air-icon: url("../assets/elements/air.png");
+  --fatex-avatar-water-icon: url("../assets/elements/water.png");
+  --fatex-avatar-earth-icon: url("../assets/elements/earth.png");
+  --fatex-header-color: var(--fatex-avatar-ink);
+  --fatex-header-text-color: #fff8e8;
+  --fatex-primary-color: var(--fatex-avatar-ink);
+  --fatex-light-text-color: #fff8e8;
+}
+
+:root.fatex-avatar-elements-ui.fatex-avatar-elements-ui--high-contrast {
+  --fatex-avatar-ink: #0c1116;
+  --fatex-avatar-ink-soft: #1f2a35;
+  --fatex-avatar-line: rgba(12, 17, 22, 0.42);
+  --fatex-avatar-shadow: rgba(0, 0, 0, 0.34);
+}
+
+:root.fatex-avatar-elements-ui .fatex-sheet .window-content,
+:root.fatex-avatar-elements-ui .fatex-sheet--app .window-content,
+:root.fatex-avatar-elements-ui .fatex-sheet--item .window-content {
+  color: var(--fatex-avatar-ink);
+  background: var(--fatex-avatar-paper);
+  border: 1px solid rgba(23, 33, 43, 0.28);
+}
+
+:root.fatex-avatar-elements-ui .fatex-sheet {
+  font-variant-ligatures: common-ligatures;
+}
+
+:root.fatex-avatar-elements-ui .fatex-sheet .window-header {
+  background:
+    linear-gradient(90deg, var(--fatex-avatar-earth), var(--fatex-avatar-water) 42%, var(--fatex-avatar-fire));
+  color: #fff8e8;
+  border-bottom: 1px solid rgba(255, 248, 232, 0.22);
+}
+
+:root.fatex-avatar-elements-ui .fatex-header {
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(85, 112, 65, 0.94), rgba(35, 111, 143, 0.96) 38%, rgba(185, 74, 40, 0.94));
+  box-shadow: 0 8px 22px var(--fatex-avatar-shadow);
+}
+
+:root.fatex-avatar-elements-ui .fatex-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.34;
+  background: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-header::after {
+  content: "";
+  position: absolute;
+  inset: 6px 120px 6px auto;
+  width: 240px;
+  z-index: -1;
+  opacity: 0.22;
+  background:
+    var(--fatex-avatar-air-icon) left center / 54px 54px no-repeat,
+    var(--fatex-avatar-water-icon) 62px center / 54px 54px no-repeat,
+    var(--fatex-avatar-earth-icon) 124px center / 54px 54px no-repeat,
+    var(--fatex-avatar-fire-icon) 186px center / 54px 54px no-repeat;
+  filter: saturate(1.18) contrast(1.08);
+}
+
+:root.fatex-avatar-elements-ui .fatex-header__image img,
+:root.fatex-avatar-elements-ui .fatex-artwork__image {
+  border: 2px solid rgba(255, 248, 232, 0.72);
+  box-shadow: 0 4px 12px var(--fatex-avatar-shadow);
+}
+
+:root.fatex-avatar-elements-ui .fatex-header__label,
+:root.fatex-avatar-elements-ui .fatex-text-input__label {
+  color: inherit;
+  letter-spacing: 2px;
+  opacity: 0.78;
+}
+
+:root.fatex-avatar-elements-ui .fatex-desk__sidebar {
+  background:
+    linear-gradient(180deg, rgba(35, 111, 143, 0.05), rgba(85, 112, 65, 0.07)),
+    #ffffff;
+  box-shadow: inset 1px 0 0 rgba(23, 33, 43, 0.08), -10px 0 28px rgba(23, 33, 43, 0.16);
+}
+
+:root.fatex-avatar-elements-ui .fatex-desk__sidebar::before {
+  content: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-desk__aspects,
+:root.fatex-avatar-elements-ui .fatex-desk__consequences,
+:root.fatex-avatar-elements-ui .fatex-desk__tabs,
+:root.fatex-avatar-elements-ui .fatex-desk__footer,
+:root.fatex-avatar-elements-ui .fatex-artwork,
+:root.fatex-avatar-elements-ui .fatex-item-grid {
+  background-image: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-headline {
+  overflow: hidden;
+  color: #fff8e8;
+  background:
+    linear-gradient(90deg, var(--fatex-avatar-ink), var(--fatex-avatar-water));
+  border: 1px solid rgba(255, 248, 232, 0.18);
+  box-shadow: 0 4px 10px rgba(23, 33, 43, 0.16);
+}
+
+:root.fatex-avatar-elements-ui .fatex-headline__text::before {
+  content: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-headline::before,
+:root.fatex-avatar-elements-ui .fatex-headline::after {
+  opacity: 0.82;
+}
+
+:root.fatex-avatar-elements-ui .fatex-desk__aspects .fatex-headline {
+  background: linear-gradient(90deg, var(--fatex-avatar-fire), #7d2d22);
+}
+
+:root.fatex-avatar-elements-ui .fatex-desk__aspects .fatex-headline__text::before {
+  background-image: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-desk__consequences .fatex-headline {
+  background: linear-gradient(90deg, var(--fatex-avatar-earth), #344a31);
+}
+
+:root.fatex-avatar-elements-ui .fatex-desk__consequences .fatex-headline__text::before {
+  background-image: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-desk__tabs .fatex-headline,
+:root.fatex-avatar-elements-ui .fatex-tab-content--skills .fatex-headline {
+  background: linear-gradient(90deg, var(--fatex-avatar-water), #183f56);
+}
+
+:root.fatex-avatar-elements-ui .fatex-desk__tabs .fatex-headline__text::before,
+:root.fatex-avatar-elements-ui .fatex-tab-content--skills .fatex-headline__text::before {
+  background-image: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-text-input,
+:root.fatex-avatar-elements-ui input[type="text"].fatex-text-input,
+:root.fatex-avatar-elements-ui textarea,
+:root.fatex-avatar-elements-ui select {
+  color: var(--fatex-avatar-ink);
+  background: #ffffff;
+  border-bottom: 1px solid rgba(23, 33, 43, 0.42);
+  box-shadow: inset 0 -1px 0 rgba(23, 33, 43, 0.08);
+}
+
+:root.fatex-avatar-elements-ui .fatex-text-input:focus,
+:root.fatex-avatar-elements-ui input[type="text"].fatex-text-input:focus,
+:root.fatex-avatar-elements-ui textarea:focus {
+  background: #ffffff;
+  border-color: var(--fatex-avatar-water);
+  box-shadow: 0 0 0 2px rgba(35, 111, 143, 0.16), inset 0 -1px 0 rgba(23, 33, 43, 0.08);
+}
+
+:root.fatex-avatar-elements-ui .fatex-tabs-navigation {
+  color: var(--fatex-avatar-ink);
+  border-bottom: 2px solid var(--fatex-avatar-ink);
+  background: linear-gradient(90deg, rgba(216, 169, 70, 0.16), rgba(35, 111, 143, 0.1));
+}
+
+:root.fatex-avatar-elements-ui .fatex-tabs-navigation::before,
+:root.fatex-avatar-elements-ui .fatex-tabs-navigation::after {
+  content: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-tabs-navigation::after {
+  background-image: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-tabs-navigation__item {
+  transition: color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+:root.fatex-avatar-elements-ui .fatex-tabs-navigation__item.active,
+:root.fatex-avatar-elements-ui .fatex-tabs-navigation__item:hover {
+  color: #fff8e8;
+  background: var(--fatex-avatar-ink);
+  box-shadow: inset 0 -3px 0 var(--fatex-avatar-air);
+}
+
+:root.fatex-avatar-elements-ui .fatex-item {
+  border-radius: 3px;
+}
+
+:root.fatex-avatar-elements-ui .fatex-item:hover {
+  background: rgba(35, 111, 143, 0.05);
+}
+
+:root.fatex-avatar-elements-ui .fatex-actions__icon {
+  color: var(--fatex-avatar-ink);
+  filter: drop-shadow(0 1px 0 rgba(255, 248, 232, 0.8));
+}
+
+:root.fatex-avatar-elements-ui .fatex-headline .fatex-actions__icon {
+  color: #fff8e8;
+}
+
+:root.fatex-avatar-elements-ui .fatex-button--dark,
+:root.fatex-avatar-elements-ui .fatex-button--square {
+  color: #fff8e8;
+  background: linear-gradient(135deg, var(--fatex-avatar-ink), var(--fatex-avatar-water));
+  border: 1px solid rgba(255, 248, 232, 0.22);
+  box-shadow: 2px 3px 8px rgba(23, 33, 43, 0.22);
+}
+
+:root.fatex-avatar-elements-ui .fatex-button--light,
+:root.fatex-avatar-elements-ui .fatex-button--clear-all {
+  color: var(--fatex-avatar-ink);
+  background: #ffffff;
+  border: 1px solid var(--fatex-avatar-line);
+}
+
+:root.fatex-avatar-elements-ui .fatex-stress-track {
+  gap: 12px 18px;
+}
+
+:root.fatex-avatar-elements-ui .fatex-stress-track::before {
+  content: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-chat,
+:root.fatex-avatar-elements-ui .chat-message,
+:root.fatex-avatar-elements-ui li.chat-message {
+  color: var(--fatex-avatar-ink);
+  background: var(--fatex-avatar-paper) !important;
+  border: 1px solid var(--fatex-avatar-line) !important;
+  box-shadow: 0 4px 16px rgba(23, 33, 43, 0.14) !important;
+}
+
+:root.fatex-avatar-elements-ui .fatex-chat {
+  position: relative;
+  overflow: hidden;
+}
+
+:root.fatex-avatar-elements-ui .fatex-chat::before {
+  content: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-roll {
+  color: var(--fatex-avatar-ink);
+}
+
+:root.fatex-avatar-elements-ui .fatex-dice--2d6-roll div,
+:root.fatex-avatar-elements-ui .fatex-roll-actions button {
+  color: #fff8e8;
+  background: var(--fatex-avatar-ink);
+  border-color: var(--fatex-avatar-ink);
+}
+
+:root.fatex-avatar-elements-ui .fatex-dice div.fatex-dice__magic_die {
+  color: var(--fatex-avatar-spirit);
+}
+
+:root.fatex-avatar-elements-ui .fatex-avatar-themed-window {
+  box-shadow: 0 0 0 1px rgba(255, 248, 232, 0.24), 0 18px 44px rgba(0, 0, 0, 0.32);
+}
+
+:root.fatex-avatar-elements-ui.fatex-avatar-elements-ui--dense .fatex-desk__aspects,
+:root.fatex-avatar-elements-ui.fatex-avatar-elements-ui--dense .fatex-desk__consequences,
+:root.fatex-avatar-elements-ui.fatex-avatar-elements-ui--dense .fatex-desk__tabs,
+:root.fatex-avatar-elements-ui.fatex-avatar-elements-ui--dense .fatex-artwork {
+  padding: 7px;
+}
+
+:root.fatex-avatar-elements-ui.fatex-avatar-elements-ui--dense .fatex-headline__text {
+  padding: 4px 16px;
+}
