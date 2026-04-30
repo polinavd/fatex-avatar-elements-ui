@@ -259,7 +259,9 @@
 :root.fatex-avatar-elements-ui .chat-message,
 :root.fatex-avatar-elements-ui li.chat-message {
   color: var(--fatex-avatar-ink);
-  background: var(--fatex-avatar-paper) !important;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.92)),
+    var(--fatex-avatar-paper) !important;
   border: 1px solid var(--fatex-avatar-line) !important;
   box-shadow: 0 4px 16px rgba(23, 33, 43, 0.14) !important;
 }
@@ -267,10 +269,38 @@
 :root.fatex-avatar-elements-ui .fatex-chat {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 :root.fatex-avatar-elements-ui .fatex-chat::before {
-  content: none;
+  content: "";
+  position: absolute;
+  inset: 8px;
+  z-index: -1;
+  opacity: 0.13;
+  background:
+    var(--fatex-avatar-water-icon) 4% 12% / 76px 76px no-repeat,
+    var(--fatex-avatar-air-icon) 96% 12% / 72px 72px no-repeat,
+    var(--fatex-avatar-earth-icon) 6% 92% / 70px 70px no-repeat,
+    var(--fatex-avatar-fire-icon) 96% 92% / 76px 76px no-repeat;
+  filter: saturate(1.1) contrast(1.08);
+  pointer-events: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-chat .fatex-headline,
+:root.fatex-avatar-elements-ui .fatex-chat .fatex-roll,
+:root.fatex-avatar-elements-ui .fatex-chat .fatex-dice,
+:root.fatex-avatar-elements-ui .fatex-chat .fatex-roll-actions {
+  position: relative;
+  z-index: 1;
+}
+
+:root.fatex-avatar-elements-ui .fatex-chat .fatex-headline {
+  box-shadow: 0 6px 14px rgba(23, 33, 43, 0.18);
+}
+
+:root.fatex-avatar-elements-ui .fatex-chat .fatex-roll__total {
+  text-shadow: 0 1px 0 #fff;
 }
 
 :root.fatex-avatar-elements-ui .fatex-roll {
