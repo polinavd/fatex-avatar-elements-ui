@@ -16,11 +16,29 @@ function applyThemeClasses() {
     HIGH_CONTRAST_CLASS,
     enabledForSystem && game.settings.get(MODULE_ID, "highContrast")
   );
+
+  document.body?.classList.toggle(`${ROOT_CLASS}__body`, enabledForSystem);
+  ensureWorldBackground(enabledForSystem);
 }
 
 function markThemedWindow(html) {
   const element = html?.jquery ? html[0] : html;
   element?.closest?.(".app")?.classList?.add("fatex-avatar-themed-window");
+}
+
+function ensureWorldBackground(enabled) {
+  const existing = document.querySelector(".fatex-avatar-world-background");
+
+  if (!enabled) {
+    existing?.remove();
+    return;
+  }
+
+  if (existing) return;
+
+  const background = document.createElement("div");
+  background.className = "fatex-avatar-world-background";
+  document.body.prepend(background);
 }
 
 Hooks.once("init", () => {
