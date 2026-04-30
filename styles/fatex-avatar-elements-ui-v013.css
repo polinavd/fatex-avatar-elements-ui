@@ -9,21 +9,29 @@
   content: none !important;
 }
 
-:root.fatex-avatar-elements-ui .fatex-avatar-header-elements {
+:root.fatex-avatar-elements-ui .fatex-header__logo::before {
+  content: "";
   position: absolute;
-  top: 10px;
-  right: 170px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  height: 42px;
-  padding: 4px 10px;
-  background: rgba(255, 255, 255, 0.92);
+  top: 50%;
+  right: calc(100% + 18px);
+  z-index: 3;
+  width: 178px;
+  height: 44px;
+  background:
+    var(--fatex-avatar-air-icon) 8px center / 34px 34px no-repeat,
+    var(--fatex-avatar-water-icon) 50px center / 34px 34px no-repeat,
+    var(--fatex-avatar-earth-icon) 92px center / 34px 34px no-repeat,
+    var(--fatex-avatar-fire-icon) 134px center / 34px 34px no-repeat,
+    rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
+  transform: translateY(-50%);
   pointer-events: none;
+}
+
+:root.fatex-avatar-elements-ui .fatex-avatar-header-elements {
+  display: none;
 }
 
 :root.fatex-avatar-elements-ui .fatex-avatar-header-elements img {
@@ -44,10 +52,16 @@
 }
 
 @media (max-width: 900px) {
-  :root.fatex-avatar-elements-ui .fatex-avatar-header-elements {
-    right: 130px;
-    gap: 4px;
-    padding-inline: 6px;
+  :root.fatex-avatar-elements-ui .fatex-header__logo::before {
+    right: calc(100% + 10px);
+    width: 132px;
+    height: 36px;
+    background:
+      var(--fatex-avatar-air-icon) 6px center / 26px 26px no-repeat,
+      var(--fatex-avatar-water-icon) 38px center / 26px 26px no-repeat,
+      var(--fatex-avatar-earth-icon) 70px center / 26px 26px no-repeat,
+      var(--fatex-avatar-fire-icon) 102px center / 26px 26px no-repeat,
+      rgba(255, 255, 255, 0.92);
   }
 
   :root.fatex-avatar-elements-ui .fatex-avatar-header-elements img {
