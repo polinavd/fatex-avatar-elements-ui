@@ -94,6 +94,35 @@
   z-index: 2;
 }
 
+:root.fatex-avatar-elements-ui .fatex-header__fate-points {
+  margin-right: 245px;
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+:root.fatex-avatar-elements-ui .fatex-header__fate-points-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+:root.fatex-avatar-elements-ui .fatex-header__fate-points .fatex-text-input--fp,
+:root.fatex-avatar-elements-ui .fatex-header__fate-points input[type="text"].fatex-text-input--fp {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+:root.fatex-avatar-elements-ui .fatex-header__fatepoint-divider {
+  background: transparent !important;
+}
+
+@media (max-width: 900px) {
+  :root.fatex-avatar-elements-ui .fatex-header__fate-points {
+    margin-right: 170px;
+  }
+}
+
 :root.fatex-avatar-elements-ui .fatex-header__image img,
 :root.fatex-avatar-elements-ui .fatex-artwork__image {
   border: 2px solid rgba(255, 248, 232, 0.72);
